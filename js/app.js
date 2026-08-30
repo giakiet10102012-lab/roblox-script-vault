@@ -1,11 +1,11 @@
 /**
- * Điều khiển chính ứng dụng: Tab navigation, Generator UI, Cloud Tools, Settings & Toasts
+ * Điều khiển chính ứng dụng: Tab navigation, Generator UI, Cloud Tools, Settings, GitHub Sync & Toasts
  */
 const App = {
   currentTab: "scripts",
   lastGenerated: { username: "", password: "", combo: "" },
 
-  init() {
+  async init() {
     this.setupTabs();
     this.setupGenerator();
     this.renderCloudTools();
@@ -16,6 +16,17 @@ const App = {
     // Khởi tạo các module con
     ScriptManager.init();
     AccountManager.init();
+
+    // Tải dữ liệu đám mây mới nhất từ GitHub Repository
+    const syncRes = await StorageManager.fetchFromGitHub();
+    if (syncRes.success) {
+      console.log("Đã nạp dữ liệu mới nhất từ GitHub Cloud.");
+      ScriptManager.renderCategoryPills();
+      ScriptManager.renderScripts();
+      AccountManager.renderAccounts();
+      this.renderCloudTools();
+      this.updateStats();
+    }
 
     // Lắng nghe phím tắt
     document.addEventListener("keydown", (e) => {
@@ -31,13 +42,11 @@ const App = {
       }
     });
 
-    console.log("Roblox Script & Account Vault initialized successfully.");
+    console.log("Roblox Script & Account Vault initialized with Cloud Sync support.");
   },
 
   setupTabs() {
     const tabButtons = document.querySelectorAll(".nav-tab-btn");
-    const tabPanels = document.querySelectorAll(".tab-panel");
-
     tabButtons.forEach(btn => {
       btn.addEventListener("click", () => {
         const targetTab = btn.dataset.tab;
@@ -112,7 +121,7 @@ const App = {
       });
     }
 
-    // Nút Chỉ tạo Pass (mặc định 8 ký tự)
+    // Nút Chỉ tạo Pass
     const btnGenPass = document.getElementById("btn-generate-pass");
     if (btnGenPass) {
       btnGenPass.addEventListener("click", () => {
@@ -272,7 +281,47 @@ const App = {
   },
 
   setupSettings() {
-    // Nút Xuất Backup JSON
+    // 1. Cấu hình GitHub Cloud Sync
+    const tokenInput = document.getElementById("gh-token-input");
+    const btnSaveToken = document.getElementById("btn-save-token");
+    const btnSyncNow = document.getElementById("btn-sync-cloud-now");
+
+    if (tokenInput) {
+      tokenInput.value = StorageManager.getGitHubToken();
+    }
+
+    if (btnSaveToken) {
+      btnSaveToken.addEventListener("click", async () => {
+        const token = tokenInput ? tokenInput.value.trim() : "";
+        StorageManager.setGitHubToken(token);
+        if (token) {
+          App.showToast("Đang kiểm tra và đồng bộ với GitHub Cloud...", "info");
+          const res = await StorageManager.syncToGitHub();
+          if (res.success) {
+            App.showToast("Đã kích hoạt đồng bộ GitHub Cloud thành công!", "success");
+          } else {
+            App.showToast("Lỗi đồng bộ: " + res.error, "error");
+          }
+        } else {
+          StorageManager.updateSyncUI();
+          App.showToast("Đã xóa Token GitHub.", "info");
+        }
+      });
+    }
+
+    if (btnSyncNow) {
+      btnSyncNow.addEventListener("click", async () => {
+        App.showToast("Đang đồng bộ dữ liệu lên GitHub Cloud...", "info");
+        const res = await StorageManager.syncToGitHub();
+        if (res.success) {
+          App.showToast("Đã đồng bộ toàn bộ Script & Acc lên GitHub thành công!", "success");
+        } else {
+          App.showToast("Không thể đồng bộ: " + res.error, "error");
+        }
+      });
+    }
+
+    // 2. Nút Xuất Backup JSON
     const btnExport = document.getElementById("btn-export-backup");
     if (btnExport) {
       btnExport.addEventListener("click", () => {
@@ -281,7 +330,7 @@ const App = {
       });
     }
 
-    // File input Nhập JSON
+    // 3. File input Nhập JSON
     const fileInput = document.getElementById("import-file-input");
     if (fileInput) {
       fileInput.addEventListener("change", (e) => {
@@ -306,7 +355,7 @@ const App = {
       });
     }
 
-    // Nút Khôi phục mặc định
+    // 4. Nút Khôi phục mặc định
     const btnReset = document.getElementById("btn-reset-default");
     if (btnReset) {
       btnReset.addEventListener("click", () => {
@@ -324,7 +373,6 @@ const App = {
   },
 
   setupModals() {
-    // Đóng tất cả modal khi bấm vào nút close hoặc backdrop
     document.querySelectorAll(".btn-close-modal").forEach(btn => {
       btn.addEventListener("click", () => {
         document.querySelectorAll(".modal-container").forEach(m => m.classList.add("hidden"));
@@ -379,12 +427,10 @@ const App = {
 
     container.appendChild(toast);
 
-    // Animate in
     setTimeout(() => {
       toast.classList.remove("translate-y-4", "opacity-0");
     }, 10);
 
-    // Remove after 3s
     setTimeout(() => {
       toast.classList.add("opacity-0", "translate-y-2");
       setTimeout(() => toast.remove(), 300);
@@ -392,7 +438,6 @@ const App = {
   }
 };
 
-// Khởi chạy khi DOM đã sẵn sàng
 document.addEventListener("DOMContentLoaded", () => {
   App.init();
 });
