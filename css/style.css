@@ -1,17 +1,91 @@
-/* Custom Styling for Roblox Script & Account Vault */
+/* ==========================================================================
+   ROBLOX SCRIPT VAULT - PREMIUM CYBERPUNK / GLASSMORPHISM THEME
+   ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap');
 
 :root {
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Space Grotesk', var(--font-sans);
   --font-mono: 'JetBrains Mono', monospace;
+  
+  --bg-main: #06080f;
+  --bg-card: rgba(13, 18, 30, 0.75);
+  --bg-card-hover: rgba(18, 25, 42, 0.85);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(6, 182, 212, 0.4);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: #0b0f19;
+  background-color: var(--bg-main);
   color: #f1f5f9;
+  min-height: 100vh;
+  position: relative;
   overflow-x: hidden;
+}
+
+/* Ambient Background Lights & Grid */
+.bg-ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.ambient-glow-1 {
+  position: absolute;
+  top: -150px;
+  left: 20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, transparent 70%);
+  filter: blur(80px);
+}
+
+.ambient-glow-2 {
+  position: absolute;
+  top: 30%;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, transparent 70%);
+  filter: blur(80px);
+}
+
+.ambient-glow-3 {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+  filter: blur(90px);
+}
+
+.cyber-grid {
+  position: fixed;
+  inset: 0;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Typography */
+h1, h2, h3, .font-heading {
+  font-family: var(--font-heading);
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-mono);
 }
 
 /* Custom Scrollbar */
@@ -21,70 +95,185 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: rgba(6, 8, 15, 0.8);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #1e293b;
   border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #06b6d4;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
 }
 
-/* Code fonts */
-code, pre {
-  font-family: var(--font-mono);
+/* Glassmorphism Card Container */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Custom Glow & Neon Accents */
-.glow-cyan {
-  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.35);
+.glass-card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(6, 182, 212, 0.3);
+  box-shadow: 0 15px 35px -10px rgba(6, 182, 212, 0.15), 0 0 0 1px rgba(6, 182, 212, 0.15);
+  transform: translateY(-3px);
 }
 
-.glow-purple {
-  box-shadow: 0 0 25px -5px rgba(168, 85, 247, 0.35);
+/* Script Card Styling */
+.script-card {
+  position: relative;
+  overflow: hidden;
 }
 
-.glow-emerald {
-  box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.35);
+.script-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-/* Glassmorphism Backgrounds */
-.glass-panel {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(51, 65, 85, 0.6);
+.script-card:hover::before {
+  opacity: 1;
 }
 
-/* Card hover animation */
-.script-card, .acc-card {
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+/* Terminal / Code Box Look */
+.terminal-box {
+  background: rgba(4, 7, 13, 0.95);
+  border: 1px solid rgba(30, 41, 59, 0.8);
+  border-radius: 12px;
+  position: relative;
 }
 
-.script-card:hover, .acc-card:hover {
-  transform: translateY(-2px);
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(30, 41, 59, 0.6);
+  background: rgba(10, 15, 26, 0.8);
 }
 
-/* Smooth Tab Transitions */
-.tab-panel {
-  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+.terminal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Glowing Badges */
+.glow-badge-cyan {
+  background: rgba(6, 182, 212, 0.12);
+  color: #38bdf8;
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  box-shadow: 0 0 12px -2px rgba(6, 182, 212, 0.25);
 }
 
-/* Hide scrollbar on category pills container */
+.glow-badge-purple {
+  background: rgba(168, 85, 247, 0.12);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  box-shadow: 0 0 12px -2px rgba(168, 85, 247, 0.25);
+}
+
+.glow-badge-emerald {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  box-shadow: 0 0 12px -2px rgba(16, 185, 129, 0.25);
+}
+
+.glow-badge-amber {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 0 12px -2px rgba(245, 158, 11, 0.25);
+}
+
+/* Animated Buttons */
+.btn-cyber-primary {
+  background: linear-gradient(135deg, #06b6d4 0%, #2563eb 100%);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 4px 20px -2px rgba(6, 182, 212, 0.4);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cyber-primary:hover {
+  background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
+  box-shadow: 0 6px 25px rgba(6, 182, 212, 0.6);
+  transform: translateY(-1px);
+}
+
+.btn-cyber-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-cyber-emerald {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 4px 20px -2px rgba(16, 185, 129, 0.4);
+  transition: all 0.2s ease;
+}
+
+.btn-cyber-emerald:hover {
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  box-shadow: 0 6px 25px rgba(16, 185, 129, 0.6);
+  transform: translateY(-1px);
+}
+
+/* Tab Active State */
+.nav-tab-btn {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.nav-tab-btn.active-tab {
+  background: linear-gradient(180deg, rgba(6, 182, 212, 0.2) 0%, rgba(6, 182, 212, 0.05) 100%);
+  color: #38bdf8;
+  border-color: rgba(6, 182, 212, 0.5);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.2), inset 0 0 10px rgba(6, 182, 212, 0.1);
+}
+
+/* Modal animation */
+.modal-container {
+  animation: modalFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-container > div {
+  animation: modalScaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalScaleUp {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Avatar generator initials */
+.avatar-gradient {
+  background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+}
+
+/* Hide scrollbar on pills */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
