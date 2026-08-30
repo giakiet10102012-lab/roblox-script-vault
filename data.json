@@ -857,10 +857,11 @@
       "username": "st6uqh4b",
       "password": "2eaqQH58",
       "game": "Blox Fruits",
-      "purpose": "cay ban",
+      "purpose": "1",
       "status": "active",
-      "notes": "ban acc",
-      "createdAt": "2026-08-30T11:36:59.982Z"
+      "notes": "1",
+      "createdAt": "2026-08-30T11:36:59.982Z",
+      "updatedAt": "2026-08-30T11:46:16.122Z"
     }
   ],
   "cloudLinks": [
