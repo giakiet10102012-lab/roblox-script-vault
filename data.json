@@ -848,9 +848,10 @@
       "password": "lahchabafd",
       "game": "Blox Fruits",
       "purpose": "Acc Blox Fruit 1",
-      "status": "farming",
+      "status": "active",
       "notes": "Acc kaitun Blox Fruits",
-      "createdAt": "2026-08-30"
+      "createdAt": "2026-08-30",
+      "updatedAt": "2026-08-30T09:37:59.664Z"
     },
     {
       "id": "acc-4",
