@@ -76,7 +76,7 @@
       ],
       "description": "Script tự động chọn Team Marines và lấy tộc Cyborg bằng Luarmor loader.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "getgenv().Team = \"Marines\"\ngetgenv().Get_Race = \"Cyborg\"\nloadstring(game:HttpGet(\"https://api.luarmor.net/files/v3/loaders/7a6c326e81861b3e1e7207c5d11ed755.lua\"))()",
       "createdAt": "2026-08-30"
     },
@@ -259,7 +259,7 @@
       ],
       "description": "Script tự tìm và đổi server có Rip Indra, Dough v2 và các sự kiện boss.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/skibiditoiletgojo/Haidepzai/refs/heads/main/Teddy-Premium\"))()",
       "createdAt": "2026-08-30"
     },
@@ -274,7 +274,7 @@
       ],
       "description": "Xóa 100% rác, hiệu ứng thừa, tối ưu hóa FPS tối đa khi treo nhiều acc kaitun.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/skibiditoiletgojo/Haidepzai/refs/heads/main/Fixlag-delete100%25trash-Teddy\"))()",
       "createdAt": "2026-08-30"
     },
@@ -320,7 +320,7 @@
       ],
       "description": "Tự tìm và cất trái ác quỷ, tự hop server sau 20s, hỗ trợ gửi Webhook Discord khi nhặt được trái ngon.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "_G.Settings = {\n    [\"Start Farm\"] = true,\n    [\"Choose Team\"] = \"Marines\",\n    [\"Store Fruit\"] = true,\n    [\"Bypass TP\"] = false,\n    [\"Next Server Time\"] = 20,\n    [\"Chat Settings\"] = {\n        [\"Enable\"] = false,\n        [\"Messages\"] = {\n            \"Wow! I found a legendary fruit when I used the Skull Hub\",\n            \"Search Y T SKULL HUB\"\n        },\n        [\"Chat Delay\"] = 5\n    },\n    [\"Webhook Settings\"] = {\n        [\"Enable\"] = true,\n        [\"Link\"] = \"\",\n        [\"Mention\"] = \"@\",\n        [\"SendTimes\"] = 1,\n        [\"Interval\"] = 1\n    }\n}\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/xxhumggxx/SkullHub/refs/heads/main/FruitCollect.lua\"))()",
       "createdAt": "2026-08-30"
     },
@@ -382,7 +382,7 @@
       ],
       "description": "Cấu hình Kaitun V4 nâng gear, auto change race, webhook discord thông báo done trial/train.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "getgenv().ConfigV4 = {\n    [\"Account Up Gear\"] = {\n      \"\"\n    },\n    [\"Account Help\"] = {\n      \"\"\n    },\n    [\"Method Kick\"] = {\n        [\"End Moon\"] = false,\n    },\n    [\"Auto Join\"] = false,\n    [\"Auto Change Race\"] = {\n        [\"Enabled\"] = false,\n        [\"Race\"] = {\"\"} --- Human,Skypiea,Fishman,Mink\n    },\n    [\"Webhook\"] = {\n        [\"url\"] = \"https://discord.com/api/webhooks/1459175561501872403/HqlVZrVleUbOqrAq7sfy3KtqSeaKzH7njzjecG9QLjKMM8EjpEKM105lZIAE0ox-0v-7\",\n        [\"Done Train\"] = false,\n        [\"Done Trial\"] = false,\n    }\n}\ngetgenv().Key = \"e974620d2340e0657190c86a\"\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/obiiyeuem/vthangsitink/refs/heads/main/NewV4Config.lua\"))()",
       "createdAt": "2026-08-30"
     },
