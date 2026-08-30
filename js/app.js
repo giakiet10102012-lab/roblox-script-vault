@@ -518,7 +518,7 @@ const App = {
       });
     }
 
-    if (btnSyncNow) {
+        if (btnSyncNow) {
       btnSyncNow.addEventListener("click", async () => {
         App.showToast("Đang đồng bộ dữ liệu lên GitHub Cloud...", "info");
         const res = await StorageManager.syncToGitHub();
@@ -526,53 +526,6 @@ const App = {
           App.showToast("Đã đồng bộ toàn bộ Script, Acc & Cloud lên GitHub thành công!", "success");
         } else {
           App.showToast("Không thể đồng bộ: " + res.error, "error");
-        }
-      });
-    }
-
-    const btnExport = document.getElementById("btn-export-backup");
-    if (btnExport) {
-      btnExport.addEventListener("click", () => {
-        StorageManager.exportBackupJSON();
-        App.showToast("Đã xuất file sao lưu JSON!", "success");
-      });
-    }
-
-    const fileInput = document.getElementById("import-file-input");
-    if (fileInput) {
-      fileInput.addEventListener("change", (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
-
-        const reader = new FileReader();
-        reader.onload = (event) => {
-          const res = StorageManager.importBackupJSON(event.target.result);
-          if (res.success) {
-            App.showToast(`Khôi phục thành công ${res.count} script và ${res.accCount} tài khoản!`, "success");
-            ScriptManager.renderCategoryPills();
-            ScriptManager.renderScripts();
-            AccountManager.renderAccounts();
-            App.renderCloudTools();
-            App.updateStats();
-          } else {
-            App.showToast("Lỗi nhập dữ liệu: " + res.error, "error");
-          }
-        };
-        reader.readAsText(file);
-      });
-    }
-
-    const btnReset = document.getElementById("btn-reset-default");
-    if (btnReset) {
-      btnReset.addEventListener("click", () => {
-        if (confirm("Bạn có chắc chắn muốn khôi phục toàn bộ dữ liệu ban đầu từ Google Doc? Mọi thay đổi chưa sao lưu sẽ bị ghi đè.")) {
-          StorageManager.resetToDefault();
-          ScriptManager.renderCategoryPills();
-          ScriptManager.renderScripts();
-          AccountManager.renderAccounts();
-          App.renderCloudTools();
-          App.updateStats();
-          App.showToast("Đã khôi phục dữ liệu gốc thành công!", "success");
         }
       });
     }
