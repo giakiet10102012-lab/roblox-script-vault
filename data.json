@@ -843,16 +843,6 @@
   ],
   "accounts": [
     {
-      "id": "acc-1",
-      "username": "framdeadraild",
-      "password": "010203040506070809",
-      "game": "Dead Rails",
-      "purpose": "Nick farm Dead Rails",
-      "status": "active",
-      "notes": "Treo farm bond & auto win map Dead Rails",
-      "createdAt": "2026-08-30"
-    },
-    {
       "id": "acc-2",
       "username": "asfcasad",
       "password": "235689147",
