@@ -1,5 +1,5 @@
 /**
- * Điều khiển chính ứng dụng: Tab navigation, Generator UI, Cloud Tools, Settings, GitHub Sync & Toasts
+ * Điều khiển chính ứng dụng: Tab navigation, Generator UI, Cloud Tools CRUD, Settings, GitHub Sync & Toasts
  */
 const App = {
   currentTab: "scripts",
@@ -8,6 +8,7 @@ const App = {
   async init() {
     this.setupTabs();
     this.setupGenerator();
+    this.setupCloudEvents();
     this.renderCloudTools();
     this.setupSettings();
     this.setupModals();
@@ -42,7 +43,7 @@ const App = {
       }
     });
 
-    console.log("Roblox Script & Account Vault initialized with Cloud Sync support.");
+    console.log("Roblox Script & Account Vault initialized with full Cloud CRUD.");
   },
 
   setupTabs() {
@@ -102,13 +103,9 @@ const App = {
       });
     }
 
-    // Nút Tạo Cặp
     const btnGenPair = document.getElementById("btn-generate-pair");
-    if (btnGenPair) {
-      btnGenPair.addEventListener("click", () => this.generateSinglePair());
-    }
+    if (btnGenPair) btnGenPair.addEventListener("click", () => this.generateSinglePair());
 
-    // Nút Chỉ tạo User
     const btnGenUser = document.getElementById("btn-generate-user");
     if (btnGenUser) {
       btnGenUser.addEventListener("click", () => {
@@ -121,7 +118,6 @@ const App = {
       });
     }
 
-    // Nút Chỉ tạo Pass
     const btnGenPass = document.getElementById("btn-generate-pass");
     if (btnGenPass) {
       btnGenPass.addEventListener("click", () => {
@@ -133,7 +129,6 @@ const App = {
       });
     }
 
-    // Nút Copy User
     const btnCopyUser = document.getElementById("btn-copy-gen-user");
     if (btnCopyUser) {
       btnCopyUser.addEventListener("click", () => {
@@ -143,7 +138,6 @@ const App = {
       });
     }
 
-    // Nút Copy Pass
     const btnCopyPass = document.getElementById("btn-copy-gen-pass");
     if (btnCopyPass) {
       btnCopyPass.addEventListener("click", () => {
@@ -153,7 +147,6 @@ const App = {
       });
     }
 
-    // Nút Copy Combo
     const btnCopyCombo = document.getElementById("btn-copy-gen-combo");
     if (btnCopyCombo) {
       btnCopyCombo.addEventListener("click", () => {
@@ -164,7 +157,6 @@ const App = {
       });
     }
 
-    // Nút Lưu vào Quản Lý Tài Khoản
     const btnSaveToVault = document.getElementById("btn-save-gen-to-vault");
     if (btnSaveToVault) {
       btnSaveToVault.addEventListener("click", () => {
@@ -178,13 +170,9 @@ const App = {
       });
     }
 
-    // Nút Tạo Hàng Loạt (Batch)
     const btnGenBatch = document.getElementById("btn-generate-batch");
-    if (btnGenBatch) {
-      btnGenBatch.addEventListener("click", () => this.generateBatchPairs());
-    }
+    if (btnGenBatch) btnGenBatch.addEventListener("click", () => this.generateBatchPairs());
 
-    // Nút Copy tất cả batch
     const btnCopyAllBatch = document.getElementById("btn-copy-all-batch");
     if (btnCopyAllBatch) {
       btnCopyAllBatch.addEventListener("click", () => {
@@ -197,7 +185,6 @@ const App = {
       });
     }
 
-    // Sinh 1 cặp ban đầu khi mở trang
     this.generateSinglePair();
   },
 
@@ -229,59 +216,281 @@ const App = {
     }
   },
 
+  // --- CLOUD & TIỆN ÍCH CRUD ---
+  setupCloudEvents() {
+    // Nút mở modal thêm link cloud
+    const btnAddCloud = document.getElementById("btn-add-cloud");
+    if (btnAddCloud) {
+      btnAddCloud.addEventListener("click", () => this.openAddCloudModal());
+    }
+
+    // Form submit cloud modal
+    const formCloud = document.getElementById("form-cloud-modal");
+    if (formCloud) {
+      formCloud.addEventListener("submit", (e) => {
+        e.preventDefault();
+        this.handleSaveCloudLink();
+      });
+    }
+
+    // Nút mở modal thêm ghi chú
+    const btnAddNote = document.getElementById("btn-add-note");
+    if (btnAddNote) {
+      btnAddNote.addEventListener("click", () => this.openAddNoteModal());
+    }
+
+    // Form submit note modal
+    const formNote = document.getElementById("form-note-modal");
+    if (formNote) {
+      formNote.addEventListener("submit", (e) => {
+        e.preventDefault();
+        this.handleSaveNote();
+      });
+    }
+  },
+
   renderCloudTools() {
     const container = document.getElementById("cloud-links-grid");
     if (!container) return;
 
     const links = StorageManager.getCloudLinks();
-    container.innerHTML = links.map(item => `
-      <div class="bg-slate-900/80 hover:bg-slate-850 border border-slate-800/80 hover:border-cyan-500/40 rounded-2xl p-5 transition-all duration-200 flex flex-col justify-between shadow-lg shadow-black/20">
-        <div>
-          <div class="flex items-center justify-between gap-2 mb-2">
-            <span class="px-2.5 py-0.5 rounded-md text-[11px] font-semibold ${item.type === "client" ? "bg-purple-500/15 text-purple-400 border-purple-500/30" : "bg-cyan-500/15 text-cyan-400 border-cyan-500/30"} border">
-              ${item.type === "client" ? "Client / Executor" : "Cloud Treo Game"}
-            </span>
-            <span class="px-2 py-0.5 rounded-md text-[10px] bg-slate-800 text-slate-400 border border-slate-700">
-              ${item.platform || "PC"}
-            </span>
+    if (links.length === 0) {
+      container.innerHTML = `
+        <div class="col-span-full py-12 text-center text-slate-400 bg-slate-900/40 rounded-2xl border border-dashed border-slate-800">
+          <p class="text-sm font-medium text-slate-300">Chưa có dịch vụ cloud nào</p>
+          <p class="text-xs text-slate-500 mt-1">Bấm "+ Thêm Tiện Ích / Cloud" để lưu thêm.</p>
+        </div>
+      `;
+    } else {
+      container.innerHTML = links.map(item => `
+        <div class="glass-card rounded-2xl p-5 flex flex-col justify-between group relative" data-id="${item.id}">
+          <div>
+            <!-- Header: Type Badge & Edit/Delete -->
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <div class="flex items-center gap-1.5">
+                <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold ${item.type === "client" ? "glow-badge-purple" : (item.type === "tool" ? "glow-badge-emerald" : "glow-badge-cyan")}">
+                  ${item.type === "client" ? "Executor / Client" : (item.type === "tool" ? "Công cụ Lập Trình" : "Cloud Treo Game")}
+                </span>
+                <span class="px-2 py-0.5 rounded-md text-[10px] bg-slate-900/80 text-slate-400 border border-slate-800 font-mono">
+                  ${item.platform || "PC"}
+                </span>
+              </div>
+
+              <!-- Action buttons -->
+              <div class="flex items-center gap-1">
+                <button 
+                  onclick="App.openEditCloudModal('${item.id}')" 
+                  class="p-1.5 rounded-lg text-slate-500 hover:text-cyan-400 hover:bg-slate-800 transition-all" 
+                  title="Chỉnh sửa">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                </button>
+                <button 
+                  onclick="App.confirmDeleteCloud('${item.id}')" 
+                  class="p-1.5 rounded-lg text-slate-500 hover:text-rose-400 hover:bg-rose-500/15 transition-all" 
+                  title="Xóa link">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                </button>
+              </div>
+            </div>
+
+            <h4 class="text-base font-bold text-slate-100 mb-1 font-heading group-hover:text-cyan-300 transition-colors">${ScriptManager.escapeHTML(item.title)}</h4>
+            <p class="text-xs text-slate-400 mb-3 leading-relaxed">${ScriptManager.escapeHTML(item.description || "")}</p>
+            <div class="text-[11px] text-emerald-400 font-semibold mb-3">💰 Giá: ${item.pricing || "Free"}</div>
           </div>
 
-          <h4 class="text-base font-semibold text-slate-100 mb-1">${ScriptManager.escapeHTML(item.title)}</h4>
-          <p class="text-xs text-slate-400 mb-3">${ScriptManager.escapeHTML(item.description || "")}</p>
-          <div class="text-[11px] text-emerald-400 font-medium mb-3">💰 Giá: ${item.pricing || "Free"}</div>
+          <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2">
+            <a 
+              href="${item.url}" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="w-full text-center px-4 py-2.5 rounded-xl text-xs font-bold btn-cyber-primary flex items-center justify-center gap-1.5 active:scale-95">
+              <span>Truy Cập / Tải Về</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
         </div>
+      `).join("");
+    }
 
-        <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2">
-          <a 
-            href="${item.url}" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="w-full text-center px-4 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white shadow-md shadow-cyan-500/20 active:scale-95 transition-all flex items-center justify-center gap-1.5">
-            <span>Truy Cập / Tải Về</span>
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-          </a>
-        </div>
-      </div>
-    `).join("");
-
-    // Render Note Leviathan
+    // Render Notes
     const notesContainer = document.getElementById("notes-container");
     if (notesContainer) {
       const notes = StorageManager.getNotes();
-      notesContainer.innerHTML = notes.map(n => `
-        <div class="bg-slate-900/90 border border-slate-800/80 rounded-2xl p-5 shadow-lg">
-          <h4 class="text-base font-semibold text-amber-400 mb-2.5 flex items-center gap-2">
-            <span>🌊</span>
-            <span>${ScriptManager.escapeHTML(n.title)}</span>
-          </h4>
-          <pre class="text-xs font-sans text-slate-300 whitespace-pre-wrap leading-relaxed bg-slate-950/80 border border-slate-800 p-4 rounded-xl select-text">${ScriptManager.escapeHTML(n.content)}</pre>
-        </div>
-      `).join("");
+      if (notes.length === 0) {
+        notesContainer.innerHTML = `
+          <div class="py-8 text-center text-slate-500 bg-slate-900/30 rounded-2xl border border-dashed border-slate-800 text-xs">
+            Chưa có ghi chú nào. Bấm "+ Thêm Ghi Chú" để tạo ghi chú mới.
+          </div>
+        `;
+      } else {
+        notesContainer.innerHTML = notes.map(n => `
+          <div class="glass-card rounded-2xl p-5 shadow-lg">
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <h4 class="text-base font-bold text-amber-400 flex items-center gap-2 font-heading">
+                <span>📝</span>
+                <span>${ScriptManager.escapeHTML(n.title)}</span>
+              </h4>
+              <div class="flex items-center gap-1">
+                <button 
+                  onclick="App.openEditNoteModal('${n.id}')" 
+                  class="p-1.5 rounded-lg text-slate-500 hover:text-cyan-400 hover:bg-slate-800 transition-all" 
+                  title="Chỉnh sửa ghi chú">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                </button>
+                <button 
+                  onclick="App.confirmDeleteNote('${n.id}')" 
+                  class="p-1.5 rounded-lg text-slate-500 hover:text-rose-400 hover:bg-rose-500/15 transition-all" 
+                  title="Xóa ghi chú">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                </button>
+              </div>
+            </div>
+            <pre class="text-xs font-sans text-slate-300 whitespace-pre-wrap leading-relaxed bg-slate-950/90 border border-slate-800/80 p-4 rounded-xl select-text">${ScriptManager.escapeHTML(n.content)}</pre>
+          </div>
+        `).join("");
+      }
+    }
+  },
+
+  openAddCloudModal() {
+    const modal = document.getElementById("modal-cloud");
+    const title = document.getElementById("modal-cloud-title");
+    const form = document.getElementById("form-cloud-modal");
+    if (!modal || !form) return;
+
+    title.textContent = "Thêm Tiện Ích / Cloud Mới";
+    form.reset();
+    document.getElementById("cloud-id-input").value = "";
+    modal.classList.remove("hidden");
+  },
+
+  openEditCloudModal(id) {
+    const links = StorageManager.getCloudLinks();
+    const item = links.find(l => l.id === id);
+    if (!item) return;
+
+    const modal = document.getElementById("modal-cloud");
+    const title = document.getElementById("modal-cloud-title");
+    if (!modal) return;
+
+    title.textContent = "Chỉnh Sửa Tiện Ích / Cloud";
+    document.getElementById("cloud-id-input").value = item.id;
+    document.getElementById("cloud-title-input").value = item.title || "";
+    document.getElementById("cloud-type-input").value = item.type || "cloud";
+    document.getElementById("cloud-platform-input").value = item.platform || "PC";
+    document.getElementById("cloud-pricing-input").value = item.pricing || "Free";
+    document.getElementById("cloud-url-input").value = item.url || "";
+    document.getElementById("cloud-desc-input").value = item.description || "";
+
+    modal.classList.remove("hidden");
+  },
+
+  handleSaveCloudLink() {
+    const id = document.getElementById("cloud-id-input").value;
+    const title = document.getElementById("cloud-title-input").value.trim();
+    const type = document.getElementById("cloud-type-input").value;
+    const platform = document.getElementById("cloud-platform-input").value.trim();
+    const pricing = document.getElementById("cloud-pricing-input").value.trim();
+    const url = document.getElementById("cloud-url-input").value.trim();
+    const description = document.getElementById("cloud-desc-input").value.trim();
+
+    if (!title || !url) {
+      App.showToast("Vui lòng nhập Tên và Đường link URL!", "error");
+      return;
+    }
+
+    const linkData = {
+      id: id || undefined,
+      title,
+      type: type || "cloud",
+      platform: platform || "PC",
+      pricing: pricing || "Free",
+      url,
+      description
+    };
+
+    StorageManager.saveCloudLink(linkData);
+    document.getElementById("modal-cloud").classList.add("hidden");
+    this.renderCloudTools();
+    App.showToast(id ? "Đã cập nhật tiện ích!" : "Đã thêm tiện ích mới thành công!", "success");
+  },
+
+  confirmDeleteCloud(id) {
+    const links = StorageManager.getCloudLinks();
+    const item = links.find(l => l.id === id);
+    if (!item) return;
+
+    if (confirm(`Bạn có chắc chắn muốn xóa tiện ích "${item.title}"?`)) {
+      StorageManager.deleteCloudLink(id);
+      this.renderCloudTools();
+      App.showToast("Đã xóa tiện ích.", "info");
+    }
+  },
+
+  openAddNoteModal() {
+    const modal = document.getElementById("modal-note");
+    const title = document.getElementById("modal-note-title");
+    const form = document.getElementById("form-note-modal");
+    if (!modal || !form) return;
+
+    title.textContent = "Thêm Ghi Chú Mới";
+    form.reset();
+    document.getElementById("note-id-input").value = "";
+    modal.classList.remove("hidden");
+  },
+
+  openEditNoteModal(id) {
+    const notes = StorageManager.getNotes();
+    const item = notes.find(n => n.id === id);
+    if (!item) return;
+
+    const modal = document.getElementById("modal-note");
+    const title = document.getElementById("modal-note-title");
+    if (!modal) return;
+
+    title.textContent = "Chỉnh Sửa Ghi Chú";
+    document.getElementById("note-id-input").value = item.id;
+    document.getElementById("note-title-input").value = item.title || "";
+    document.getElementById("note-content-input").value = item.content || "";
+
+    modal.classList.remove("hidden");
+  },
+
+  handleSaveNote() {
+    const id = document.getElementById("note-id-input").value;
+    const title = document.getElementById("note-title-input").value.trim();
+    const content = document.getElementById("note-content-input").value.trim();
+
+    if (!title || !content) {
+      App.showToast("Vui lòng nhập Tiêu đề và Nội dung ghi chú!", "error");
+      return;
+    }
+
+    const noteData = {
+      id: id || undefined,
+      title,
+      content
+    };
+
+    StorageManager.saveNote(noteData);
+    document.getElementById("modal-note").classList.add("hidden");
+    this.renderCloudTools();
+    App.showToast(id ? "Đã cập nhật ghi chú!" : "Đã thêm ghi chú mới!", "success");
+  },
+
+  confirmDeleteNote(id) {
+    const notes = StorageManager.getNotes();
+    const item = notes.find(n => n.id === id);
+    if (!item) return;
+
+    if (confirm(`Bạn có chắc chắn muốn xóa ghi chú "${item.title}"?`)) {
+      StorageManager.deleteNote(id);
+      this.renderCloudTools();
+      App.showToast("Đã xóa ghi chú.", "info");
     }
   },
 
   setupSettings() {
-    // 1. Cấu hình GitHub Cloud Sync
     const tokenInput = document.getElementById("gh-token-input");
     const btnSaveToken = document.getElementById("btn-save-token");
     const btnSyncNow = document.getElementById("btn-sync-cloud-now");
@@ -314,14 +523,13 @@ const App = {
         App.showToast("Đang đồng bộ dữ liệu lên GitHub Cloud...", "info");
         const res = await StorageManager.syncToGitHub();
         if (res.success) {
-          App.showToast("Đã đồng bộ toàn bộ Script & Acc lên GitHub thành công!", "success");
+          App.showToast("Đã đồng bộ toàn bộ Script, Acc & Cloud lên GitHub thành công!", "success");
         } else {
           App.showToast("Không thể đồng bộ: " + res.error, "error");
         }
       });
     }
 
-    // 2. Nút Xuất Backup JSON
     const btnExport = document.getElementById("btn-export-backup");
     if (btnExport) {
       btnExport.addEventListener("click", () => {
@@ -330,7 +538,6 @@ const App = {
       });
     }
 
-    // 3. File input Nhập JSON
     const fileInput = document.getElementById("import-file-input");
     if (fileInput) {
       fileInput.addEventListener("change", (e) => {
@@ -355,7 +562,6 @@ const App = {
       });
     }
 
-    // 4. Nút Khôi phục mặc định
     const btnReset = document.getElementById("btn-reset-default");
     if (btnReset) {
       btnReset.addEventListener("click", () => {
