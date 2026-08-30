@@ -843,26 +843,24 @@
   ],
   "accounts": [
     {
-      "id": "acc-3",
-      "username": "avhiben",
-      "password": "lahchabafd",
+      "id": "acc_1788090083940_jzll3",
+      "username": "j6jsnioe",
+      "password": "pOhAi6Jj",
       "game": "Blox Fruits",
-      "purpose": "Acc Blox Fruit 1",
+      "purpose": "j6jsnioe",
       "status": "active",
-      "notes": "acc cay ban",
-      "createdAt": "2026-08-30",
-      "updatedAt": "2026-08-30T09:38:40.617Z"
+      "notes": "",
+      "createdAt": "2026-08-30T11:41:23.940Z"
     },
     {
-      "id": "acc-4",
-      "username": "hjbvhjja",
-      "password": "jhabvjhbadv",
+      "id": "acc_1788089819982_wywzn",
+      "username": "st6uqh4b",
+      "password": "2eaqQH58",
       "game": "Blox Fruits",
-      "purpose": "Acc Blox Fruit 2",
+      "purpose": "cay ban",
       "status": "active",
-      "notes": "acc cay ban",
-      "createdAt": "2026-08-30",
-      "updatedAt": "2026-08-30T09:41:12.997Z"
+      "notes": "ban acc",
+      "createdAt": "2026-08-30T11:36:59.982Z"
     }
   ],
   "cloudLinks": [
