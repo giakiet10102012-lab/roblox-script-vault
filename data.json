@@ -867,15 +867,6 @@
   ],
   "cloudLinks": [
     {
-      "id": "cloud-1",
-      "title": "LT4C Cloud Dashboard (PC Free)",
-      "type": "cloud",
-      "url": "https://dash.lt4c.io.vn/dashboard",
-      "platform": "PC",
-      "pricing": "Miễn phí (Free)",
-      "description": "Dịch vụ VPS / Cloud treo game PC miễn phí."
-    },
-    {
       "id": "cloud-2",
       "title": "MaxCloudPhone Store (Cloud Phone)",
       "type": "cloud",
