@@ -397,7 +397,7 @@
       ],
       "description": "Banana Hub Blox Fruits - Kèm sẵn Key và link get key dự phòng.",
       "keyLink": "https://ads.luarmor.net/get_key?for=VHFslhWdrPey",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "repeat wait() until game:IsLoaded() and game.Players.LocalPlayer \ngetgenv().Key = \"e974620d2340e0657190c86a\" \nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/obiiyeuem/vthangsitink/main/BananaHub.lua\"))()",
       "createdAt": "2026-08-30"
     },
@@ -412,7 +412,7 @@
       ],
       "description": "HoHo Hub script huyền thoại Blox Fruits.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI\"))()",
       "createdAt": "2026-08-30"
     },
@@ -441,7 +441,7 @@
       ],
       "description": "W-Azure Hub cực mượt cho Blox Fruits.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "loadstring(game:HttpGet(\"https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua\"))()",
       "createdAt": "2026-08-30"
     },
@@ -503,7 +503,7 @@
       ],
       "description": "Cấu hình siêu chi tiết: Lấy Saber, Godhuman, Skull Guitar, Mirror Fractal, CDK, Race V2-V3, Pull Lever, Hop Rip Indra, Dough King, Mua Haki, Sniper Trái (Leopard, Kitsune, Dragon, Yeti, Gas).",
       "keyLink": "https://ads.luarmor.net/get_key?for=VHFslhWdrPey",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "repeat wait() until game:IsLoaded() and game.Players.LocalPlayer\ngetgenv().Key = \"e974620d2340e0657190c86a\"\ngetgenv().SettingFarm ={\n    [\"Hide UI\"] = false,\n    [\"Reset Teleport\"] = {\n        [\"Enabled\"] = false,\n        [\"Delay Reset\"] = 3,\n        [\"Item Dont Reset\"] = {\n            [\"Fruit\"] = {\n                [\"Enabled\"] = true,\n                [\"All Fruit\"] = true, \n                [\"Select Fruit\"] = {\n                    [\"Enabled\"] = false,\n                    [\"Fruit\"] = {},\n                },\n            },\n        },\n    },\n    [\"White Screen\"] = false,\n    [\"Lock Fps\"] = {\n        [\"Enabled\"] = false,\n        [\"FPS\"] = 20,\n    },\n    [\"Get Items\"] = {\n        [\"Saber\"] = true,\n        [\"Godhuman\"] =  true,\n        [\"Skull Guitar\"] = true,\n        [\"Mirror Fractal\"] = true,\n        [\"Cursed Dual Katana\"] = true,\n        [\"Upgrade Race V2-V3\"] = true,\n        [\"Auto Pull Lever\"] = true,\n    },\n    [\"Select Hop\"] = { -- 70% will have it\n        [\"Hop Find Rip Indra Get Valkyrie Helm or Get Tushita\"] = true, \n        [\"Hop Find Dough King Get Mirror Fractal\"] = false,\n        [\"Hop Find Raids Castle [CDK]\"] = true,\n        [\"Hop Find Cake Queen [CDK]\"] = true,\n        [\"Hop Find Soul Reaper [CDK]\"] = true,\n        [\"Hop Find Darkbeard [SG]\"] = true,\n        [\"Hop Find Mirage [ Pull Lever ]\"] = true,\n    },\n    [\"Buy Haki\"] = {\n        [\"Enhancement\"] = false,\n        [\"Skyjump\"] = true,\n        [\"Flash Step\"] = true,\n        [\"Observation\"] = true,\n    },\n    [\"Sniper Fruit Shop\"] = {\n        [\"Enabled\"] = true, -- Auto Buy Fruit in Shop Mirage and Normal\n        [\"Fruit\"] = {\"Leopard-Leopard\",\"Kitsune-Kitsune\",\"Dragon-Dragon\",\"Yeti-Yeti\",\"Gas-Gas\"},\n    },\n    [\"Lock Fruit\"] = {},\n    [\"Webhook\"] = {\n        [\"Enabled\"] = false,\n        [\"WebhookUrl\"] = \"\",\n    }\n}\n\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/obiiyeuem/vthangsitink/main/BananaCat-kaitunBF.lua\"))()",
       "createdAt": "2026-08-30"
     },
@@ -519,7 +519,7 @@
       ],
       "description": "Kaitun làm nhiệm vụ tộc V2, V3, Haki 7 màu, gạt cần Cổng Gạt (Pull Lever), farm full 19+ kiếm và full súng, có FPS booster.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "getgenv().Configs = {\n    [\"Quest\"] = {\n        [\"Evo Race V2\"] = true;\n        [\"Evo Race V3\"] = true;\n        [\"RGB Haki\"] = true;\n        [\"Pull Lerver\"] = true;\n    };\n    [\"Webhook\"] = {\n        [\"Url Webhook\"] = \"\";\n        [\"Ping discord\"] = \"\";      \n        [\"Time Send\"] = \"10m\";\n    };\n    [\"Sword\"] = {\n        \"Dual-Headed Blade\", \"Smoke Admiral\", \"Wardens Sword\", \"Cutlass\", \"Katana\",\n        \"Dual Katana\", \"Triple Katana\", \"Iron Mace\", \"Saber\", \"Pole (1st Form)\",\n        \"Gravity Blade\", \"Longsword\", \"Rengoku\", \"Midnight Blade\", \"Soul Cane\",\n        \"Bisento\", \"Yama\", \"Tushita\", \"Cursed Dual Katana\"\n    };\n    [\"Gun\"] = {\n        \"Skull Guitar\", \"Kabucha\", \"Venom Bow\", \"Musket\", \"Flintlock\",\n        \"Refined Slingshot\", \"Magma Blaster\", \"Dual Flintlock\", \"Cannon\",\n        \"Bizarre Revolver\", \"Bazooka\"\n    };\n    [\"FPS Booster\"] = true;\n};\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/shinichi-dz/phucshinsayhi/refs/heads/main/KaitunBloxFruit.lua\"))()",
       "createdAt": "2026-08-30"
     },
@@ -535,7 +535,7 @@
       ],
       "description": "Auto cày Mastery vũ khí, tự đi Raid Legit, tự mở khóa Godhuman, Race V3, farm CDK, Shark Anchor, Soul Guitar, Haki Color, snipe Trái Rồng/Dough/Buddha.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "getgenv().simple_settings = {\n    [\"MASTERY\"] = {\n        [\"ACTIVE\"] = true,\n        [\"METHOD\"] = \"Half\", -- \"Half\"[350] or \"Full\"[600]\n    },\n    [\"RAID\"] = {\n        [\"MODE\"] = \"Legit\", -- Legit / KillAura\n    },\n    [\"OBJECTIVE\"] = {\n        [\"GODHUMAN\"] = true,\n        [\"RACE-CONFIGURE\"] = {\n            [\"RACE\"] = {\"Human\", \"Skypiea\", \"Fishman\", \"Mink\"},\n            [\"RACE-LOCK\"] = true,\n            [\"RACE-V3\"] = true,\n        },\n        [\"FRAGMENT\"] = 100000,\n        [\"CANVANDER\"] = true,\n        [\"BUDDY-SWORD\"] = true,\n        [\"CURSED-DUAL-KATANA\"] = true,\n        [\"SHARK-ANCHOR\"] = true,\n        [\"ACIDUM-RIFLE\"] = true,\n        [\"VENOM-BOW\"] = true,\n        [\"SOUL-GUITAR\"] = true,\n        [\"COLOR-HAKI\"] = {\"Pure Red\",\"Winter Sky\",\"Snow White\"},\n    },\n    [\"FRUITPURCHASE\"] = true,\n    [\"PRIORITYFRUIT\"] = {\n        [1] = \"Dragon-Dragon\",\n        [2] = \"Dough-Dough\",\n        [3] = \"Flame-Flame\",\n        [4] = \"Rumble-Rumble\",\n        [5] = \"Human-Human: Buddha\",\n        [6] = \"Dark-Dark\",\n    },\n    [\"FPSCAP\"] = 30,\n    [\"LOWTEXTURE\"] = true\n}\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/simple-hubs/contents/refs/heads/main/bloxfruit-kaitan-main.lua\"))()",
       "createdAt": "2026-08-30"
     },
@@ -552,7 +552,7 @@
       ],
       "description": "Bản Kaitun đầy đủ nhất của Xero: Auto Max Level, Cursed Dual Katana, Soul Guitar, Godhuman, Awakening Fruit, Rainbow Haki, tự đổi server tìm Tushita/Valkyrie Helm/Mirror Fractal.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "-- Max level, godhuman, cdk, sgt\nscript_key = \"\" -- premium only, u can leave it blank if ur not\ngetgenv().Shutdown = false -- Turn on if u are farming bulk accounts\ngetgenv().Configs = {\n    [\"Team\"] = \"Marines\",\n    [\"FPS Boost\"] = {\n        [\"Enable\"] = false,\n        [\"FPS Cap\"] = 30,\n    },\n    [\"Farm Boss Drops\"] = {\n        [\"Enable\"] = false,\n        [\"When x2 Exp Expired\"] = false\n    },\n    [\"Hop\"] = { -- premium only\n        [\"Enable\"] = true,\n        [\"Hop Find Tushita\"] = true,\n        [\"Hop Find Valkyrie Helm\"] = true,\n        [\"Hop Find Mirror Fractal\"] = true\n    },\n    [\"Farm Mastery\"] = {\n        [\"Enable\"] = true,\n        [\"Farm Mastery Weapons\"] = {\"Sword\", \"Gun\", \"Blox Fruit\"},\n        [\"Swords To Farm\"] = {\"Cursed Dual Katana\"},\n        [\"Guns To Farm\"] = {\"Skull Guitar\"},\n        [\"Mastery Health (%)\"] = 40\n    },\n    [\"Auto Collect Berry\"] = false,\n    [\"Auto Evo Race\"] = true,\n    [\"Awaken Fruit\"] = true,\n    [\"Rainbow Haki\"] = true,\n    [\"Hop Player Near\"] = true,\n    [\"Skull Guitar\"] = true,\n    [\"Find Fruit\"] = false,\n    [\"Cursed Dual Katana\"] = true,\n    [\"Switch Melee\"] = true,\n    [\"Eat Fruit\"] = \"\",\n    [\"Snipe Fruit\"] = \"\",\n    [\"Lock Fragment\"] = 0,\n    [\"Buy Stuffs\"] = true\n}\nrepeat task.wait() pcall(function() loadstring(game:HttpGet(\"https://raw.githubusercontent.com/Xero2409/XeroHub/refs/heads/main/kaitun.lua\"))() end) until getgenv().Check_Execute",
       "createdAt": "2026-08-30"
     },
