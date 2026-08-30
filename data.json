@@ -883,15 +883,6 @@
       "platform": "PC (Có Card GPU)",
       "pricing": "Có phí (Paid)",
       "description": "Cloud máy ảo PC có GPU mạnh mẽ chuyên treo nhiều tab giả lập / Roblox."
-    },
-    {
-      "id": "client-2",
-      "title": "Swift Client",
-      "type": "client",
-      "url": "https://gofile.io/d/igQQDZ",
-      "platform": "Android / Emulator",
-      "pricing": "Free",
-      "description": "Executor Swift ổn định cho thiết bị di động."
     }
   ],
   "notes": [
