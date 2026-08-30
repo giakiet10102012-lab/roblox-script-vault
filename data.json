@@ -1,68 +1,19 @@
 {
   "categories": [
-    {
-      "id": "all",
-      "name": "Tất cả Game",
-      "icon": "layout-grid"
-    },
-    {
-      "id": "blox-fruits",
-      "name": "Blox Fruits",
-      "icon": "sword"
-    },
-    {
-      "id": "dead-rails",
-      "name": "Dead Rails",
-      "icon": "train"
-    },
-    {
-      "id": "fisch",
-      "name": "Fisch",
-      "icon": "fish"
-    },
-    {
-      "id": "arise",
-      "name": "Arise",
-      "icon": "zap"
-    },
-    {
-      "id": "pls-donate",
-      "name": "Pls Donate",
-      "icon": "coins"
-    },
-    {
-      "id": "grow-a-garden",
-      "name": "Grow a Garden",
-      "icon": "sprout"
-    },
-    {
-      "id": "99-nights",
-      "name": "99 Nights Forest",
-      "icon": "trees"
-    },
-    {
-      "id": "dev-tools",
-      "name": "Dev & Công cụ",
-      "icon": "terminal"
-    },
-    {
-      "id": "other",
-      "name": "Khác",
-      "icon": "folder"
-    }
+    { "id": "all", "name": "Tất cả Game", "icon": "layout-grid" },
+    { "id": "blox-fruits", "name": "Blox Fruits", "icon": "sword" },
+    { "id": "dead-rails", "name": "Dead Rails", "icon": "train" },
+    { "id": "fisch", "name": "Fisch", "icon": "fish" },
+    { "id": "arise", "name": "Arise", "icon": "zap" },
+    { "id": "pls-donate", "name": "Pls Donate", "icon": "coins" },
+    { "id": "grow-a-garden", "name": "Grow a Garden", "icon": "sprout" },
+    { "id": "99-nights", "name": "99 Nights Forest", "icon": "trees" },
+    { "id": "dev-tools", "name": "Dev & Công cụ", "icon": "terminal" },
+    { "id": "other", "name": "Khác", "icon": "folder" }
   ],
   "tags": [
-    "Kaitun",
-    "Auto Farm",
-    "Fix Lag",
-    "PvP / Aim",
-    "Fruit / Chest",
-    "Hop Server",
-    "Có Key",
-    "Không Key",
-    "Mob Aura",
-    "Teleport",
-    "Config Đầy Đủ"
+    "Kaitun", "Auto Farm", "Fix Lag", "PvP / Aim", "Fruit / Chest", "Hop Server",
+    "Có Key", "Không Key", "Mob Aura", "Teleport", "Config Đầy Đủ"
   ],
   "scripts": [
     {
@@ -70,10 +21,7 @@
       "title": "Get Cyborg (Tộc Cyborg)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Kaitun"
-      ],
+      "tags": ["Auto Farm", "Kaitun"],
       "description": "Script tự động chọn Team Marines và lấy tộc Cyborg bằng Luarmor loader.",
       "keyLink": "",
       "isFavorite": true,
@@ -85,10 +33,7 @@
       "title": "Get Ghoul (Tộc Quỷ)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Kaitun"
-      ],
+      "tags": ["Auto Farm", "Kaitun"],
       "description": "Script tự động chọn Team Marines và lấy tộc Ghoul (Quỷ) bằng Luarmor loader.",
       "keyLink": "",
       "isFavorite": true,
@@ -100,12 +45,7 @@
       "title": "Farm Rương & Lụm Trái (Skull Hub)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Fruit / Chest",
-        "Auto Farm",
-        "Hop Server",
-        "Config Đầy Đủ"
-      ],
+      "tags": ["Fruit / Chest", "Auto Farm", "Hop Server", "Config Đầy Đủ"],
       "description": "Cấu hình nhặt rương & trái ác quỷ, tự hop server, webhook Discord, FPS boost, anti AFK. (false = giữ lại chén và key, true = ko giữ lại)",
       "keyLink": "",
       "isFavorite": true,
@@ -117,10 +57,7 @@
       "title": "AK Gaming Hub",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Không Key"
-      ],
+      "tags": ["Auto Farm", "Không Key"],
       "description": "Script AK Gaming đa năng cho Blox Fruits.",
       "keyLink": "",
       "isFavorite": false,
@@ -132,10 +69,7 @@
       "title": "Min Gaming Hub (MinME)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Không Key"
-      ],
+      "tags": ["Auto Farm", "Không Key"],
       "description": "Script Min Gaming crack / no key.",
       "keyLink": "",
       "isFavorite": false,
@@ -147,10 +81,7 @@
       "title": "Xeter Hub",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Không Key"
-      ],
+      "tags": ["Auto Farm", "Không Key"],
       "description": "Script Xeter Blox Fruits loader.",
       "keyLink": "",
       "isFavorite": false,
@@ -162,9 +93,7 @@
       "title": "Doremon Hub (MasterHub)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm"
-      ],
+      "tags": ["Auto Farm"],
       "description": "MasterHub Doremon Blox Fruits obfuscated loader.",
       "keyLink": "",
       "isFavorite": false,
@@ -176,10 +105,7 @@
       "title": "Cokka Hub",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Có Key"
-      ],
+      "tags": ["Auto Farm", "Có Key"],
       "description": "Cokka Hub Blox Fruits - Điền key của bạn vào _G.Key.",
       "keyLink": "",
       "isFavorite": false,
@@ -191,11 +117,7 @@
       "title": "Bay / Fly Script (TurboLite)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Teleport",
-        "PvP / Aim",
-        "Không Key"
-      ],
+      "tags": ["Teleport", "PvP / Aim", "Không Key"],
       "description": "Script bay tự do trong game của TurboLite.",
       "keyLink": "",
       "isFavorite": false,
@@ -207,10 +129,7 @@
       "title": "OK Hub Main Blox Fruit",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Không Key"
-      ],
+      "tags": ["Auto Farm", "Không Key"],
       "description": "Script OK Hub cho Blox Fruits.",
       "keyLink": "",
       "isFavorite": false,
@@ -222,10 +141,7 @@
       "title": "Xero Hub Main",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Kaitun"
-      ],
+      "tags": ["Auto Farm", "Kaitun"],
       "description": "Xero Hub phiên bản chính Blox Fruits với cấu hình Marines, Hide Menu, Auto Execute.",
       "keyLink": "",
       "isFavorite": true,
@@ -237,10 +153,7 @@
       "title": "Rubu Hub v3 (RubuBF)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Không Key"
-      ],
+      "tags": ["Auto Farm", "Không Key"],
       "description": "Rubu Hub version 3 crack cho Blox Fruits.",
       "keyLink": "",
       "isFavorite": false,
@@ -252,11 +165,7 @@
       "title": "Teddy Premium (Tự đổi server Rip Indra, Dough v2)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Hop Server",
-        "Auto Farm",
-        "Kaitun"
-      ],
+      "tags": ["Hop Server", "Auto Farm", "Kaitun"],
       "description": "Script tự tìm và đổi server có Rip Indra, Dough v2 và các sự kiện boss.",
       "keyLink": "",
       "isFavorite": true,
@@ -268,10 +177,7 @@
       "title": "Fix Lag Dành Cho Kaitun (Teddy)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Fix Lag",
-        "Kaitun"
-      ],
+      "tags": ["Fix Lag", "Kaitun"],
       "description": "Xóa 100% rác, hiệu ứng thừa, tối ưu hóa FPS tối đa khi treo nhiều acc kaitun.",
       "keyLink": "",
       "isFavorite": true,
@@ -283,10 +189,7 @@
       "title": "Fix Lag Cho Farm (TurboLite)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Fix Lag",
-        "Auto Farm"
-      ],
+      "tags": ["Fix Lag", "Auto Farm"],
       "description": "Script giảm đồ họa, tối ưu FPS nhẹ nhàng khi cày cấp/farm rương.",
       "keyLink": "",
       "isFavorite": false,
@@ -298,9 +201,7 @@
       "title": "Auto Aim / Silent Aim (Ace)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "PvP / Aim"
-      ],
+      "tags": ["PvP / Aim"],
       "description": "Script tự động khóa mục tiêu hỗ trợ PvP và combo chiêu thức.",
       "keyLink": "",
       "isFavorite": false,
@@ -312,12 +213,7 @@
       "title": "Lụm Trái Ác Quỷ Tự Động (Skull Hub Fruit Collect)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Fruit / Chest",
-        "Auto Farm",
-        "Hop Server",
-        "Config Đầy Đủ"
-      ],
+      "tags": ["Fruit / Chest", "Auto Farm", "Hop Server", "Config Đầy Đủ"],
       "description": "Tự tìm và cất trái ác quỷ, tự hop server sau 20s, hỗ trợ gửi Webhook Discord khi nhặt được trái ngon.",
       "keyLink": "",
       "isFavorite": true,
@@ -329,10 +225,7 @@
       "title": "Turbo Lite Main Hub",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Không Key"
-      ],
+      "tags": ["Auto Farm", "Không Key"],
       "description": "TurboLite Blox Fruits script chính.",
       "keyLink": "",
       "isFavorite": false,
@@ -344,10 +237,7 @@
       "title": "Teddy Hub v2 Main",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Kaitun"
-      ],
+      "tags": ["Auto Farm", "Kaitun"],
       "description": "Teddy Hub v2 bản đầy đủ chức năng farm.",
       "keyLink": "",
       "isFavorite": false,
@@ -359,10 +249,7 @@
       "title": "Quantum Onyx Hub",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Không Key"
-      ],
+      "tags": ["Auto Farm", "Không Key"],
       "description": "Quantum Onyx Blox Fruits loader.",
       "keyLink": "",
       "isFavorite": false,
@@ -374,12 +261,7 @@
       "title": "Kaitun V4 Config (ThangSiTink)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Kaitun",
-        "Auto Farm",
-        "Có Key",
-        "Config Đầy Đủ"
-      ],
+      "tags": ["Kaitun", "Auto Farm", "Có Key", "Config Đầy Đủ"],
       "description": "Cấu hình Kaitun V4 nâng gear, auto change race, webhook discord thông báo done trial/train.",
       "keyLink": "",
       "isFavorite": true,
@@ -391,10 +273,7 @@
       "title": "Banana Hub Main",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Có Key"
-      ],
+      "tags": ["Auto Farm", "Có Key"],
       "description": "Banana Hub Blox Fruits - Kèm sẵn Key và link get key dự phòng.",
       "keyLink": "https://ads.luarmor.net/get_key?for=VHFslhWdrPey",
       "isFavorite": true,
@@ -406,10 +285,7 @@
       "title": "HoHo Hub",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Có Key"
-      ],
+      "tags": ["Auto Farm", "Có Key"],
       "description": "HoHo Hub script huyền thoại Blox Fruits.",
       "keyLink": "",
       "isFavorite": true,
@@ -421,9 +297,7 @@
       "title": "Mukuro Hub",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm"
-      ],
+      "tags": ["Auto Farm"],
       "description": "Mukuro Hub Blox Fruits via quartyz auth.",
       "keyLink": "",
       "isFavorite": false,
@@ -435,10 +309,7 @@
       "title": "W-Azure Hub",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Kaitun"
-      ],
+      "tags": ["Auto Farm", "Kaitun"],
       "description": "W-Azure Hub cực mượt cho Blox Fruits.",
       "keyLink": "",
       "isFavorite": true,
@@ -450,10 +321,7 @@
       "title": "CutTay Hub",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Không Key"
-      ],
+      "tags": ["Auto Farm", "Không Key"],
       "description": "CutTay Hub Blox Fruits loader.",
       "keyLink": "",
       "isFavorite": false,
@@ -465,10 +333,7 @@
       "title": "ThunderZ Hub (All Game)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Không Key"
-      ],
+      "tags": ["Auto Farm", "Không Key"],
       "description": "ThunderZ hỗ trợ nhiều game bao gồm Blox Fruits.",
       "keyLink": "",
       "isFavorite": false,
@@ -480,9 +345,7 @@
       "title": "Astral v1 Blox Fruits",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm"
-      ],
+      "tags": ["Auto Farm"],
       "description": "Astral v1 Blox Fruits loader.",
       "keyLink": "",
       "isFavorite": false,
@@ -494,13 +357,7 @@
       "title": "Banana Cat Kaitun (Full Config Items & Fruits)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Kaitun",
-        "Auto Farm",
-        "Fruit / Chest",
-        "Có Key",
-        "Config Đầy Đủ"
-      ],
+      "tags": ["Kaitun", "Auto Farm", "Fruit / Chest", "Có Key", "Config Đầy Đủ"],
       "description": "Cấu hình siêu chi tiết: Lấy Saber, Godhuman, Skull Guitar, Mirror Fractal, CDK, Race V2-V3, Pull Lever, Hop Rip Indra, Dough King, Mua Haki, Sniper Trái (Leopard, Kitsune, Dragon, Yeti, Gas).",
       "keyLink": "https://ads.luarmor.net/get_key?for=VHFslhWdrPey",
       "isFavorite": true,
@@ -512,11 +369,7 @@
       "title": "Crystal Kaitun Blox Fruit (PhucShin)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Kaitun",
-        "Auto Farm",
-        "Config Đầy Đủ"
-      ],
+      "tags": ["Kaitun", "Auto Farm", "Config Đầy Đủ"],
       "description": "Kaitun làm nhiệm vụ tộc V2, V3, Haki 7 màu, gạt cần Cổng Gạt (Pull Lever), farm full 19+ kiếm và full súng, có FPS booster.",
       "keyLink": "",
       "isFavorite": true,
@@ -528,11 +381,7 @@
       "title": "Simple Hub Kaitun (Godhuman & Mastery)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Kaitun",
-        "Auto Farm",
-        "Config Đầy Đủ"
-      ],
+      "tags": ["Kaitun", "Auto Farm", "Config Đầy Đủ"],
       "description": "Auto cày Mastery vũ khí, tự đi Raid Legit, tự mở khóa Godhuman, Race V3, farm CDK, Shark Anchor, Soul Guitar, Haki Color, snipe Trái Rồng/Dough/Buddha.",
       "keyLink": "",
       "isFavorite": true,
@@ -544,12 +393,7 @@
       "title": "Xero Kaitun (Max Level, Godhuman, CDK, SGT)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Kaitun",
-        "Auto Farm",
-        "Hop Server",
-        "Config Đầy Đủ"
-      ],
+      "tags": ["Kaitun", "Auto Farm", "Hop Server", "Config Đầy Đủ"],
       "description": "Bản Kaitun đầy đủ nhất của Xero: Auto Max Level, Cursed Dual Katana, Soul Guitar, Godhuman, Awakening Fruit, Rainbow Haki, tự đổi server tìm Tushita/Valkyrie Helm/Mirror Fractal.",
       "keyLink": "",
       "isFavorite": true,
@@ -561,10 +405,7 @@
       "title": "Nexus Hub Revival (BL)",
       "game": "Blox Fruits",
       "category": "blox-fruits",
-      "tags": [
-        "Auto Farm",
-        "Không Key"
-      ],
+      "tags": ["Auto Farm", "Không Key"],
       "description": "Nexus Hub Revival Blox Fruits.",
       "keyLink": "",
       "isFavorite": false,
@@ -576,10 +417,7 @@
       "title": "Sterling New (Dead Rails 11)",
       "game": "Dead Rails",
       "category": "dead-rails",
-      "tags": [
-        "Auto Farm",
-        "Không Key"
-      ],
+      "tags": ["Auto Farm", "Không Key"],
       "description": "Script SterlingNew cho tựa game Dead Rails.",
       "keyLink": "",
       "isFavorite": true,
@@ -591,10 +429,7 @@
       "title": "BLRTBD Mobile Key Sys (Dead Rails 2)",
       "game": "Dead Rails",
       "category": "dead-rails",
-      "tags": [
-        "Auto Farm",
-        "Có Key"
-      ],
+      "tags": ["Auto Farm", "Có Key"],
       "description": "Script Dead Rails tối ưu cho điện thoại di động.",
       "keyLink": "",
       "isFavorite": false,
@@ -606,9 +441,7 @@
       "title": "Auto Bond 1 (Dead Rails)",
       "game": "Dead Rails",
       "category": "dead-rails",
-      "tags": [
-        "Auto Farm"
-      ],
+      "tags": ["Auto Farm"],
       "description": "Script tự động nhận/farm bond Dead Rails.",
       "keyLink": "",
       "isFavorite": false,
@@ -620,10 +453,7 @@
       "title": "Auto Bond 2 (Ngon hơn / Bản VIP)",
       "game": "Dead Rails",
       "category": "dead-rails",
-      "tags": [
-        "Auto Farm",
-        "Không Key"
-      ],
+      "tags": ["Auto Farm", "Không Key"],
       "description": "Bản Auto Bond Dead Rails mượt hơn, nhanh hơn và ổn định.",
       "keyLink": "",
       "isFavorite": true,
@@ -635,10 +465,7 @@
       "title": "Kill Aura (Null-Fire / DingaScripts)",
       "game": "Dead Rails",
       "category": "dead-rails",
-      "tags": [
-        "Mob Aura",
-        "PvP / Aim"
-      ],
+      "tags": ["Mob Aura", "PvP / Aim"],
       "description": "Tự động đánh và tiêu diệt quái vật xung quanh trong Dead Rails.",
       "keyLink": "",
       "isFavorite": true,
@@ -650,9 +477,7 @@
       "title": "TP End (Dịch chuyển về đích)",
       "game": "Dead Rails",
       "category": "dead-rails",
-      "tags": [
-        "Teleport"
-      ],
+      "tags": ["Teleport"],
       "description": "Script Teleport thẳng về cuối màn chơi Dead Rails.",
       "keyLink": "",
       "isFavorite": false,
@@ -664,9 +489,7 @@
       "title": "TP Làng / Bank TP",
       "game": "Dead Rails",
       "category": "dead-rails",
-      "tags": [
-        "Teleport"
-      ],
+      "tags": ["Teleport"],
       "description": "Teleport đến ngân hàng và các địa điểm làng trong Dead Rails.",
       "keyLink": "",
       "isFavorite": false,
@@ -678,10 +501,7 @@
       "title": "Auto Win Dead Rails",
       "game": "Dead Rails",
       "category": "dead-rails",
-      "tags": [
-        "Auto Farm",
-        "Teleport"
-      ],
+      "tags": ["Auto Farm", "Teleport"],
       "description": "Script tự động hoàn thành và giành chiến thắng map Dead Rails.",
       "keyLink": "",
       "isFavorite": true,
@@ -693,9 +513,7 @@
       "title": "Lấy Class Ngựa (XuanVPPHUB)",
       "game": "Dead Rails",
       "category": "dead-rails",
-      "tags": [
-        "Auto Farm"
-      ],
+      "tags": ["Auto Farm"],
       "description": "Script XuanVP HUB hỗ trợ lấy class ngựa trong Dead Rails.",
       "keyLink": "",
       "isFavorite": false,
@@ -707,10 +525,7 @@
       "title": "Fisch Free Script (Lythicals)",
       "game": "Fisch",
       "category": "fisch",
-      "tags": [
-        "Auto Farm",
-        "Có Key"
-      ],
+      "tags": ["Auto Farm", "Có Key"],
       "description": "Script câu cá tự động Fisch với key nạp sẵn.",
       "keyLink": "",
       "isFavorite": true,
@@ -722,10 +537,7 @@
       "title": "Arise Crossover (Goomba Hub)",
       "game": "Arise",
       "category": "arise",
-      "tags": [
-        "Auto Farm",
-        "Không Key"
-      ],
+      "tags": ["Auto Farm", "Không Key"],
       "description": "Goomba Hub tự động farm cho Arise Crossover.",
       "keyLink": "",
       "isFavorite": false,
@@ -737,10 +549,7 @@
       "title": "Pls Donate (MozilHub)",
       "game": "Pls Donate",
       "category": "pls-donate",
-      "tags": [
-        "Auto Farm",
-        "Không Key"
-      ],
+      "tags": ["Auto Farm", "Không Key"],
       "description": "Script MozilHub tự động dựng quầy và xin donate.",
       "keyLink": "",
       "isFavorite": false,
@@ -752,10 +561,7 @@
       "title": "Grow a Garden (Native Loader)",
       "game": "Grow a Garden",
       "category": "grow-a-garden",
-      "tags": [
-        "Auto Farm",
-        "Có Key"
-      ],
+      "tags": ["Auto Farm", "Có Key"],
       "description": "Native Loader cho Grow a Garden (GAG) - Điền key từ link bên dưới.",
       "keyLink": "https://ads.luarmor.net/get_key?for=Native_Lootlabs-hgTHxCASTxVE",
       "isFavorite": false,
@@ -767,10 +573,7 @@
       "title": "Grow a Garden (Ameicaa Hub)",
       "game": "Grow a Garden",
       "category": "grow-a-garden",
-      "tags": [
-        "Auto Farm",
-        "Không Key"
-      ],
+      "tags": ["Auto Farm", "Không Key"],
       "description": "Script Ameicaa cho Grow a Garden.",
       "keyLink": "",
       "isFavorite": false,
@@ -782,11 +585,7 @@
       "title": "Kaitun Farm Diamond 99 Day (Vector Hub)",
       "game": "99 Nights in the Forest",
       "category": "99-nights",
-      "tags": [
-        "Kaitun",
-        "Auto Farm",
-        "Config Đầy Đủ"
-      ],
+      "tags": ["Kaitun", "Auto Farm", "Config Đầy Đủ"],
       "description": "Vector Hub tự động cày kim cương 99 ngày rừng rậm kèm thông báo Discord Webhook.",
       "keyLink": "",
       "isFavorite": true,
@@ -798,10 +597,7 @@
       "title": "99 Nights Farm Diamond v2",
       "game": "99 Nights in the Forest",
       "category": "99-nights",
-      "tags": [
-        "Auto Farm",
-        "Không Key"
-      ],
+      "tags": ["Auto Farm", "Không Key"],
       "description": "Bản script farm kim cương v2 trên RawScripts.",
       "keyLink": "",
       "isFavorite": false,
@@ -813,11 +609,7 @@
       "title": "Dex Explorer v3 (Soi cấu trúc game)",
       "game": "Dev Tools",
       "category": "dev-tools",
-      "tags": [
-        "Mob Aura",
-        "Teleport",
-        "Không Key"
-      ],
+      "tags": ["Mob Aura", "Teleport", "Không Key"],
       "description": "Bộ công cụ soi cấu trúc Workspace, ReplicatedStorage, Players, Remotes trong game Roblox.",
       "keyLink": "",
       "isFavorite": true,
@@ -829,11 +621,7 @@
       "title": "SimpleSpy v3 (Bắt Remote & Packet)",
       "game": "Dev Tools",
       "category": "dev-tools",
-      "tags": [
-        "Mob Aura",
-        "Teleport",
-        "Không Key"
-      ],
+      "tags": ["Mob Aura", "Teleport", "Không Key"],
       "description": "Công cụ bắt lệnh Đánh, Nhận nhiệm vụ, Mua đồ, FireServer, InvokeServer trong Roblox.",
       "keyLink": "",
       "isFavorite": true,
