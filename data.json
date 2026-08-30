@@ -820,7 +820,7 @@
       ],
       "description": "Bộ công cụ soi cấu trúc Workspace, ReplicatedStorage, Players, Remotes trong game Roblox.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "-- 1. Mở Dex Explorer (Dùng để soi cấu trúc game)\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/infyiff/backup/main/dex.lua\"))()",
       "createdAt": "2026-08-30"
     },
@@ -836,7 +836,7 @@
       ],
       "description": "Công cụ bắt lệnh Đánh, Nhận nhiệm vụ, Mua đồ, FireServer, InvokeServer trong Roblox.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "-- 2. Mở SimpleSpy (Dùng để bắt lệnh Đánh/Nhận nhiệm vụ)\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua\"))()",
       "createdAt": "2026-08-30"
     }
