@@ -582,7 +582,7 @@
       ],
       "description": "Script SterlingNew cho tựa game Dead Rails.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/Zayn31214/name/refs/heads/main/SterlingNew\"))()",
       "createdAt": "2026-08-30"
     },
@@ -626,7 +626,7 @@
       ],
       "description": "Bản Auto Bond Dead Rails mượt hơn, nhanh hơn và ổn định.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "loadstring(game:HttpGet('https://raw.githubusercontent.com/SevenIsYouScripts/Main/refs/heads/main/Auto%20Bonds%20Script'))()",
       "createdAt": "2026-08-30"
     },
@@ -641,7 +641,7 @@
       ],
       "description": "Tự động đánh và tiêu diệt quái vật xung quanh trong Dead Rails.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/InfernusScripts/Null-Fire/main/Loader\"))(\"DingaScripts\")",
       "createdAt": "2026-08-30"
     },
@@ -684,7 +684,7 @@
       ],
       "description": "Script tự động hoàn thành và giành chiến thắng map Dead Rails.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "loadstring(game:HttpGet(\"https://raw.githubusercontent.com/gumanba/Scripts/main/DeadRails\"))()",
       "createdAt": "2026-08-30"
     },
@@ -713,7 +713,7 @@
       ],
       "description": "Script câu cá tự động Fisch với key nạp sẵn.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "script_key=\"qdZaPkLBjadMLqmaKRzvPKJfpQADeXFe\";\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/Lythicals/script/refs/heads/main/free.lua\"))()",
       "createdAt": "2026-08-30"
     },
@@ -789,7 +789,7 @@
       ],
       "description": "Vector Hub tự động cày kim cương 99 ngày rừng rậm kèm thông báo Discord Webhook.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "getgenv().V = \"Kaitundiamond\" --Delete if not using kaitun version\ngetgenv().Webhookurl = \"https://discord.com/api/webhooks/1411353511769276456/u6ix3Zi4hfgevKt3PRuQ2pEfupjqkFhDyW6WeFvHtlEJyBeD3YaXveCR7ictHukGcmsg\" --Delete if not using Webhook\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/AAwful/Vector_Hub/0/v2\"))()",
       "createdAt": "2026-08-30"
     },
