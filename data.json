@@ -867,15 +867,6 @@
   ],
   "cloudLinks": [
     {
-      "id": "cloud-2",
-      "title": "MaxCloudPhone Store (Cloud Phone)",
-      "type": "cloud",
-      "url": "https://app.maxcloudphone.com/store",
-      "platform": "Điện thoại Android",
-      "pricing": "Có phí (Paid)",
-      "description": "Cloud phone Android treo Roblox 24/7 không hao pin điện thoại thật."
-    },
-    {
       "id": "cloud-3",
       "title": "EzyCloudX GPU VM (PC GPU)",
       "type": "cloud",
