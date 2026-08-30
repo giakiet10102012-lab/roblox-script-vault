@@ -848,9 +848,10 @@
       "password": "pOhAi6Jj",
       "game": "Blox Fruits",
       "purpose": "j6jsnioe",
-      "status": "active",
+      "status": "farming",
       "notes": "",
-      "createdAt": "2026-08-30T11:41:23.940Z"
+      "createdAt": "2026-08-30T11:41:23.940Z",
+      "updatedAt": "2026-08-30T11:59:54.183Z"
     },
     {
       "id": "acc_1788089819982_wywzn",
