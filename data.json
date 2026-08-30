@@ -843,16 +843,6 @@
   ],
   "accounts": [
     {
-      "id": "acc-2",
-      "username": "asfcasad",
-      "password": "235689147",
-      "game": "Khác",
-      "purpose": "Nick bán gem",
-      "status": "active",
-      "notes": "Chuyên trữ và giao dịch gem",
-      "createdAt": "2026-08-30"
-    },
-    {
       "id": "acc-3",
       "username": "avhiben",
       "password": "lahchabafd",
