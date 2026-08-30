@@ -19,7 +19,6 @@ const StorageManager = {
     } catch (e) {
       console.error("Lỗi đọc dữ liệu từ LocalStorage:", e);
     }
-    // Nếu chưa có, nạp mặc định và lưu vào LocalStorage
     this.saveData(DEFAULT_DATA, false);
     return JSON.parse(JSON.stringify(DEFAULT_DATA));
   },
@@ -38,7 +37,6 @@ const StorageManager = {
     }
   },
 
-  // Token GitHub để đồng bộ nhiều thiết bị
   getGitHubToken() {
     return localStorage.getItem(GITHUB_TOKEN_KEY) || "";
   },
@@ -51,7 +49,6 @@ const StorageManager = {
     }
   },
 
-  // Tải dữ liệu mới nhất từ GitHub Repository khi mở web trên thiết bị bất kỳ
   async fetchFromGitHub() {
     try {
       this.syncStatus = "syncing";
@@ -77,7 +74,6 @@ const StorageManager = {
     return { success: false };
   },
 
-  // Ghi đè dữ liệu mới nhất lên GitHub repository (để máy khác tự nhận)
   async syncToGitHub(customData = null) {
     const token = this.getGitHubToken();
     if (!token) return { success: false, error: "Chưa cấu hình Token GitHub" };
@@ -88,8 +84,6 @@ const StorageManager = {
 
       const dataToSave = customData || this.getData();
       const contentJson = JSON.stringify(dataToSave, null, 2);
-      
-      // Chuyển chuỗi UTF-8 sang Base64 chuẩn hỗ trợ tiếng Việt
       const base64Content = btoa(unescape(encodeURIComponent(contentJson)));
 
       const headers = {
@@ -98,7 +92,6 @@ const StorageManager = {
         "X-GitHub-Api-Version": "2022-11-28"
       };
 
-      // 1. Lấy SHA của file data.json hiện tại trên GitHub
       const getUrl = `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/contents/data.json`;
       let sha = null;
       try {
@@ -107,11 +100,8 @@ const StorageManager = {
           const fileData = await getRes.json();
           sha = fileData.sha;
         }
-      } catch (err) {
-        // File chưa có SHA
-      }
+      } catch (err) {}
 
-      // 2. Tải lên nội dung mới
       const putBody = {
         message: "Cập nhật dữ liệu Roblox Vault (Auto-Sync)",
         content: base64Content,
@@ -248,13 +238,72 @@ const StorageManager = {
     return true;
   },
 
-  // --- CLOUD LINKS & NOTES ---
+  // --- CLOUD LINKS OPERATIONS ---
   getCloudLinks() {
     return this.getData().cloudLinks || [];
   },
 
+  saveCloudLink(linkData) {
+    const data = this.getData();
+    if (!data.cloudLinks) data.cloudLinks = [];
+
+    if (linkData.id) {
+      const idx = data.cloudLinks.findIndex(l => l.id === linkData.id);
+      if (idx !== -1) {
+        data.cloudLinks[idx] = { ...data.cloudLinks[idx], ...linkData };
+      } else {
+        data.cloudLinks.unshift(linkData);
+      }
+    } else {
+      const newLink = {
+        ...linkData,
+        id: "cloud_" + Date.now() + "_" + Math.random().toString(36).substring(2, 6)
+      };
+      data.cloudLinks.unshift(newLink);
+    }
+    this.saveData(data);
+    return true;
+  },
+
+  deleteCloudLink(id) {
+    const data = this.getData();
+    data.cloudLinks = (data.cloudLinks || []).filter(l => l.id !== id);
+    this.saveData(data);
+    return true;
+  },
+
+  // --- NOTES OPERATIONS ---
   getNotes() {
     return this.getData().notes || [];
+  },
+
+  saveNote(noteData) {
+    const data = this.getData();
+    if (!data.notes) data.notes = [];
+
+    if (noteData.id) {
+      const idx = data.notes.findIndex(n => n.id === noteData.id);
+      if (idx !== -1) {
+        data.notes[idx] = { ...data.notes[idx], ...noteData };
+      } else {
+        data.notes.unshift(noteData);
+      }
+    } else {
+      const newNote = {
+        ...noteData,
+        id: "note_" + Date.now() + "_" + Math.random().toString(36).substring(2, 6)
+      };
+      data.notes.unshift(newNote);
+    }
+    this.saveData(data);
+    return true;
+  },
+
+  deleteNote(id) {
+    const data = this.getData();
+    data.notes = (data.notes || []).filter(n => n.id !== id);
+    this.saveData(data);
+    return true;
   },
 
   // --- EXPORT & IMPORT ---
