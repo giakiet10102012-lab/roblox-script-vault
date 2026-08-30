@@ -108,7 +108,7 @@
       ],
       "description": "Cấu hình nhặt rương & trái ác quỷ, tự hop server, webhook Discord, FPS boost, anti AFK. (false = giữ lại chén và key, true = ko giữ lại)",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "getgenv().BloxFruits = {\n    [\"Team\"] = \"Marines\", -- Pirates/Marines\n    [\"TweenSpeed\"] = 350, -- Studs per second 380 no flag but kick\n    [\"Fruit\"] = {\n        [\"FruitNotifier\"] = false, -- Fruit notifier\n        [\"AutoRandom\"] = true, -- Auto random/store fruit\n        [\"FruitSniper\"] = {\n            [\"Enabled\"] = false, -- Auto buy fruit in normal shop\n            [\"TargetFruits\"] = {\"Yeti-Yeti\", \"Dragon-Dragon\", \"Dough-Dough\"},\n        },\n    },\n    [\"Farm\"] = {\n        [\"Enabled\"] = true, -- Farm chest & fruit\n        [\"FastMethod\"] = false, -- Faster but more risky\n        [\"AutoHop\"] = true, -- Auto hop after collect all\n        [\"ItemHop\"] = false, -- God's Chalice/Fist of Darkness\n    },\n    [\"Webhook\"] = {\n        [\"Enabled\"] = false,\n        [\"URL\"] = \"Your Webhook Url\",\n        [\"UserId\"] = \"Id Discord\",\n    },\n    [\"BlackScreen\"] = false, -- Black screen\n    [\"FpsBoost\"] = false, -- Boost FPS\n    [\"AntiIdle\"] = true, -- Anti AFK\n}\n\nloadstring(game:HttpGet('https://skullhub.xyz/loader.lua'))()",
       "createdAt": "2026-08-30"
     },
@@ -228,7 +228,7 @@
       ],
       "description": "Xero Hub phiên bản chính Blox Fruits với cấu hình Marines, Hide Menu, Auto Execute.",
       "keyLink": "",
-      "isFavorite": true,
+      "isFavorite": false,
       "script": "getgenv().Team = \"Marines\"\ngetgenv().Hide_Menu = false\ngetgenv().Auto_Execute = false\nloadstring(game:HttpGet(\"https://raw.githubusercontent.com/Xero2409/XeroHub/refs/heads/main/main.lua\"))()",
       "createdAt": "2026-08-30"
     },
