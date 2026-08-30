@@ -885,15 +885,6 @@
       "description": "Cloud máy ảo PC có GPU mạnh mẽ chuyên treo nhiều tab giả lập / Roblox."
     },
     {
-      "id": "client-1",
-      "title": "Volcano Client (Chạy được Banana Hub)",
-      "type": "client",
-      "url": "https://gofile.io/d/Z6GPy8",
-      "platform": "Android / Emulator",
-      "pricing": "Free",
-      "description": "Executor hỗ trợ chạy mượt mà Banana Hub và các script nặng."
-    },
-    {
       "id": "client-2",
       "title": "Swift Client",
       "type": "client",
