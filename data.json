@@ -843,16 +843,6 @@
   ],
   "accounts": [
     {
-      "id": "acc_1788140766413_1xdro",
-      "username": "ioi9moll",
-      "password": "PGZ23zFF",
-      "game": "Blox Fruits",
-      "purpose": "4",
-      "status": "active",
-      "notes": "4",
-      "createdAt": "2026-08-31T01:46:06.413Z"
-    },
-    {
       "id": "acc_1788140760572_iw549",
       "username": "ioi9moll",
       "password": "PGZ23zFF",
