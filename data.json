@@ -848,9 +848,10 @@
       "password": "M0Mq4heS",
       "game": "Blox Fruits",
       "purpose": "6",
-      "status": "active",
+      "status": "farming",
       "notes": "6",
-      "createdAt": "2026-08-31T01:46:51.519Z"
+      "createdAt": "2026-08-31T01:46:51.519Z",
+      "updatedAt": "2026-08-31T15:08:35.773Z"
     },
     {
       "id": "acc_1788140805694_9imtp",
@@ -858,9 +859,10 @@
       "password": "to9S6gL4",
       "game": "Blox Fruits",
       "purpose": "5",
-      "status": "active",
+      "status": "farming",
       "notes": "5",
-      "createdAt": "2026-08-31T01:46:45.694Z"
+      "createdAt": "2026-08-31T01:46:45.694Z",
+      "updatedAt": "2026-08-31T15:08:39.519Z"
     }
   ],
   "cloudLinks": [
